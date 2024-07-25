@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegant Dashboard | Sign Up</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./asset/img/svg/Logo.svg" type="image/x-icon">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="./asset/css/style.min.css">
+</head>
+
+<body>
+  <div class="layer"></div>
+  <main class="page-center">
+    <article class="sign-up">
+      <h1 class="sign-up__title">register</h1>
+      <p class="sign-up__subtitle">Provide the necessary information to complete</p>
+      <section id="adnew" class="hidden">
+        <form class="sign-up-form form" id="formnew" action="" method="">
+          <label class="form-label-wrapper">
+            <p class="form-label">Name</p>
+            <input class="form-input" id="name" type="text" placeholder="Enter your name" required>
+          </label>
+          <label class="form-label-wrapper">
+            <p class="form-label">Email</p>
+            <input class="form-input" id="email" type="email" placeholder="Enter your email" required>
+          </label>
+          <label class="form-label-wrapper" for="password">password:
+            <input class="form-input" type="password" id="password" name="password" placeholder="Enter your password"
+              required>
+          </label>
+          <label class="form-label-wrapper" id="copa">confirm_password:
+            <input class="form-input" type="password" id="confirm_password" name="confirm-password"
+              placeholder="Enter your confirm password" required>
+            <p id="error-category-name" style="color: red; margin-top: 5px;"></p>
+          </label>
+          <label class="form-checkbox-wrapper">
+            <input class="form-checkbox" type="checkbox" required>
+            <span class="form-checkbox-label">Remember me next time</span>
+          </label>
+          <button class="form-btn primary-default-btn transparent-btn" type="submit" id="signup">Sign up</button>
+
+          <h2>Account List</h2>
+          <ul id="accountList"></ul>
+
+        </form>
+      </section>
+    </article>
+  </main>
+  <!-- Chart library -->
+  <script src="./plugins/chart.min.js"></script>
+  <!-- Icons library -->
+  <script src="plugins/feather.min.js"></script>
+  <!-- Custom scripts -->
+  <script src="./asset/js/signup.js"></script>
+</body>
+
+</html>

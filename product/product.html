@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <link rel="stylesheet" href="../asset/css/style.css">
+    <link rel="stylesheet" href="./product.css">
+</head>
+
+<body>
+    <div class="page-flex">
+
+        <!-- ! Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-start">
+                <div class="sidebar-head">
+                    <a href="#" class="logo-wrapper" title="Home">
+                        <div class="logo-text">
+                            <span class="logo-title">Admin</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="sidebar-body">
+                    <ul class="sidebar-body-menu">
+                        <li>
+                            <a href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="show-cat-btn" href="##">
+                                <span class="icon document" aria-hidden="true"></span>Users
+                            </a>
+                        </li>
+                        <li>
+                            <a class="show-cat-btn" href="../category/category.html">
+                                <span class="icon document" aria-hidden="true"></span>Categoryies
+                            </a>
+                        </li>
+                        <li>
+                            <a class="active" class="show-cat-btn" href="../product/product.html">
+                                <span class="icon document" aria-hidden="true"></span>Products
+                            </a>
+                        </li>
+                        <li>
+                            <a class="show-cat-btn" href="##">
+                                <span class="icon document" aria-hidden="true"></span>Orders
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+
+        <div class="main-wrapper">
+            <!-- ! Main nav -->
+            <nav class="main-nav--bg">
+                <div class="container main-nav">
+                    <div class="main-nav-start">
+                    </div>
+
+                    <div class="main-nav-end">
+                        <div class="nav-user-wrapper">
+                            <button>Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <main class="main users chart-page" id="skip-target">
+                <div class="container">
+                    <h2 class="main-title">Dashboard</h2>
+
+                    <div style="display: flex; justify-content: space-between;">
+                        <div>
+                            <button id="btn-add" type="button" class="form-btn primary-default-btn transparent-btn"
+                                style="width: fit-content;">
+                                Add product
+                            </button>
+
+                        </div>
+
+                        <div style="display: flex; justify-content: right; align-items: center; gap: 10px;">
+                            <select name="" id="sort-product">
+                                <option value="no">Nomal</option>
+                                <option value="aes">AES</option>
+                                <option value="des">DES</option>
+                            </select>
+
+                            <div style="display: flex;gap: 10px;">
+                                <input type="text"
+                                    style="width: 400px;margin-left: 50px;border: 1px solid #101010;border-radius: 4px;background-color: #fff;height: 36px;"
+                                    placeholder="nhập sản phẩm muốn tìm">
+                                <button id="vjp" class=" primary-default-btn ">Tìm</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="users-table table-wrapper">
+                                <table class="posts-table">
+                                    <thead>
+                                        <tr class="users-table-info">
+                                            <th>STT</th>
+                                            <th>Name</th>
+                                            <th>Image</th>
+                                            <th>Price</th>
+                                            <th>Stock</th>
+                                            <th>Description</th>
+                                            <th>Category</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="list-product">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="coating" style="position: fixed; width: 100vw; height: 100vh; background-color: rgba(17, 17, 17, 0.7); top: 0; 
+        left: 0; display: none; justify-content: center; align-items: center;">
+        <form id="form-product" style="background-color: white; border-radius: 4px; text-align: center; padding: 10px;">
+            <h2 id="title-form" style="margin: 10px 0;">Add Category</h2>
+
+            <div style="margin: 10px 0;">
+                <label for="">Name</label>
+                <input type="text" id="product-name">
+                <p id="error-product-name" style="color: red; margin-top: 5px;"></p>
+            </div>
+
+            <div style="margin: 10px 0;">
+                <label for="">Price</label>
+                <input type="number" id="product-name">
+                <p id="error-product-name" style="color: red; margin-top: 5px;"></p>
+            </div>
+
+            <div style="margin: 10px 0;">
+                <label for="">Stock</label>
+                <input type="number" id="product-name">
+                <p id="error-product-name" style="color: red; margin-top: 5px;"></p>
+            </div>
+
+            <div style="margin: 10px 0;">
+                <label for="">Description</label>
+                <textarea style="resize: none;" rows="8" cols="23" name="" id=""></textarea>
+                <p id="error-product-name" style="color: red; margin-top: 5px;"></p>
+            </div>
+
+            <div>
+                <label for="">Category</label>
+                <select name="" id="category-product">
+                    <!-- <option value="">asdasda</option> -->
+
+                </select>
+            </div>
+
+            <div>
+                <label for="input-image-file" style="color: rgb(62, 219, 75);">Image</label>
+                <input hidden id="input-image-file" type="file" accept="images/*">
+                <br>
+                <img width="100px" id="image-product" src="" alt="">
+            </div>
+
+            <div>
+                <p id="error-product" style="color: red;"></p>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 16px;">
+                <button type="button" id="btn-cancel"
+                    style="background-color: rgba(2, 148, 65, 0.7);color: brown; padding: 5px 10px; border-radius: 4px; margin: 10px 0;">Cancel</button>
+                <button type="button" id="btn-submit"
+                    style="background-color: rgba(2, 148, 65, 0.7);color: brown; padding: 5px 10px; border-radius: 4px; margin: 10px 0;">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+
+    <script src="./product.js"></script>
+</body>
+
+</html>

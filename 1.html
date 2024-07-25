@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+    <style>
+        .pagination {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .pagination li {
+            margin: 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+
+        }
+
+        .pagination li:hover {
+            background-color: #bc4b04;
+            cursor: pointer;
+        }
+
+        .pagination .active {
+            background-color: orange;
+            color: white;
+        }
+    </style>
+    <style>
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 10;
+        }
+
+        .pagination li {
+            margin: 0 2px;
+        }
+
+        .pagination a {
+            text-decoration: none;
+            color: black;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .pagination a.active {
+            background-color: orange;
+            color: white;
+            border: 1px solid orange;
+        }
+
+        .pagination a:hover {
+            background-color: #ab5204;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li><a href="#" onclick="selectPage(this)">1</a></li>
+        <li><a href="#" onclick="selectPage(this)">2</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+
+    <script>
+        function selectPage(element) {
+            // Xóa lớp 'active' khỏi tất cả các mục
+            let items = document.querySelectorAll('.pagination li');
+            items.forEach(function (item) {
+                item.classList.remove('active');
+            });
+
+            // Thêm lớp 'active' vào mục được chọn
+            element.parentElement.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
